@@ -1,4 +1,4 @@
--- A queue prototype, FIFO
+-- A queue prototype, FIFO.
 -- Originally based on the functional implementation of queues in PIL: https://www.lua.org/pil/11.4.html
 
 -- A note about the the use of index-based arrays in this implementation:
@@ -13,9 +13,9 @@ var:push("example")
 
 Queue = {first = 0, last = -1}
 
--- For creating a new queue
+-- For creating a new queue.
 function Queue:new(object)
-    --create a new object if not provided with one
+    -- create a new object if not provided with one
     local object = object or {}
     setmetatable(object, self)
     self.__index = self
