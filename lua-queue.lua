@@ -13,7 +13,7 @@ var:push("example")
 
 Queue = {first = 0, last = -1}
 
--- For creating a new queue.
+-- Create a new queue.
 function Queue:new(object)
     -- create a new object if not provided with one
     local object = object or {}
@@ -22,13 +22,14 @@ function Queue:new(object)
     return object
 end
 
--- For adding new entries to the queue.
+-- Add a new entry to the queue.
 function Queue:push(value)
     self.last = self.last + 1
     self[self.last] = value
 end
 
--- For getting the next entry from the queue.
+-- Deletes the first entry from the queue.
+-- Returns the deleted entry from the queue.
 function Queue:pop()
     if(self.first > self.last) then
         error("queue is empty")
@@ -39,12 +40,12 @@ function Queue:pop()
     return poppedValue
 end
 
--- For getting the size of the queue.
+-- Get the size of the queue.
 function Queue:size()
     return self.last - self.first + 1
 end
 
--- Peek at the next entry of the queue without destroying it.
+-- Peek at the first entry of the queue without deleting it.
 function Queue:peek()
     return self[self.first]
 end
